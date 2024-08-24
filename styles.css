@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+body {
+    font-family: 'poppins', sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+}
+
+#app {
+    width: 100%;
+    max-width: 1200px;
+}
+
+#addNoteBtn {
+    background: none;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+
+}
+
+#addNoteBtn i {
+    background-color: #fff;
+    color: #333;
+    padding: 15px 16px;
+    font-size: 1.3rem;
+    border-radius: 50%;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+    z-index: 9999999999999999999999999;
+}
+
+#addNotebtn,
+.colorPicker{
+    z-index: 9999999;
+}
+
+
+#addNoteBtn:active {
+    i {
+        color: gray;
+    }
+    scale: 1.1;
+}
+
+#colorPicker {
+    background-color: #fff;
+    width: 260px;
+    padding: 10px;
+    border-radius: 20px;
+    border: 1px solid gray;
+    margin: 0px 0px 20px 20px;
+}
+
+#createNoteBtn {
+    position: absolute;
+    top: 190px;
+    left: 136px;
+    background-color: #333;
+    color: #fff;
+    padding: 10px 13px;
+    font-size: 1.3rem;
+    border-radius: 50%;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    border: none;
+}
+
+#createNoteBtn:active {
+    background-color: gray;
+}
+
+.hidden {
+    display: none;
+}
+
+.color-options {
+    display: flex;
+    gap: 10px;
+    margin: 10px 0;
+}
+
+.color-option {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 2px solid transparent;
+}
+
+.color-option.selected {
+    border: 2px solid #000;
+}
+
+.note {
+    position: absolute;
+    width: 200px;
+    padding: 10px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.note .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.note .header .title {
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    outline: none;
+}
+
+.note textarea {
+    width: 100%;
+    border: none;
+    outline: none;
+    resize: none;
+    margin-top: 10px;
+    overflow: hidden;
+    background: none;
+    font-size: 1.2rem;
+    color: #000;
+    font-family: 'poppins', sans-serif;
+}
+
+.note.selected {
+    border: 2px solid #000;
+}

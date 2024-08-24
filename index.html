@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Note App</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div id="app">
+        <button id="addNoteBtn"><i class="fas fa-note-sticky"></i></button>
+        <div id="colorPicker" class="hidden">
+            <div class="color-options">
+                <div class="color-option" style="background-color: #cdfc93;" data-color="#cdfc93"></div>
+                <div class="color-option" style="background-color: #ff7ecd;" data-color="#ff7ecd"></div>
+                <div class="color-option" style="background-color: #71d7ff;" data-color="#71d7ff"></div>
+                <div class="color-option" style="background-color: #ce81ff;" data-color="#ce81ff"></div>
+                <div class="color-option" style="background-color: #fff68b;" data-color="#fff68b"></div>
+                <div class="color-option" style="background-color: #ff9800;" data-color="#ff9800"></div>
+            </div>
+            <button id="createNoteBtn"><i class="fas fa-plus"></i></button>
+        </div>
+        <div id="notesContainer"></div>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>
