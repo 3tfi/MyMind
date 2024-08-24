@@ -23,15 +23,15 @@ document.addEventListener('DOMContentLoaded', () => {
         colorPicker.classList.add('hidden');
     });
 
-    function createNoteWithColor(color) {
+    function createNoteWithColor(color, title = 'New Note', text = '') {
         const note = document.createElement('div');
         note.classList.add('note');
         note.style.backgroundColor = color;
         note.innerHTML = `
             <div class="header">
-                <span class="title" maxlength="8" contenteditable="true">New Note</span>
+                <span class="title" maxlength="8" contenteditable="true">${title}</span>
             </div>
-            <textarea placeholder="Add note text"></textarea>
+            <textarea placeholder="Add note text">${text}</textarea>
         `;
         notesContainer.appendChild(note);
         makeDraggable(note);
@@ -121,21 +121,20 @@ document.addEventListener('DOMContentLoaded', () => {
     function loadNotes() {
         const notes = JSON.parse(localStorage.getItem('notes')) || [];
         notes.forEach(noteData => {
-            const note = document.createElement('div');
-            note.classList.add('note');
-            note.style.backgroundColor = noteData.color;
+            createNoteWithColor(noteData.color, noteData.title, noteData.text);
+            const note = notesContainer.lastChild;
             note.style.top = noteData.position.top;
             note.style.left = noteData.position.left;
-            note.innerHTML = `
-                <div class="header">
-                    <span class="title" contenteditable="true">${noteData.title}</span>
-                </div>
-                <textarea>${noteData.text}</textarea>
-            `;
-            notesContainer.appendChild(note);
-            makeDraggable(note);
-            addNoteEvents(note);
         });
+    }
+
+    function createGuideNote() {
+        createNoteWithColor('#ffffe0', 'Guide', '1. You can move notes\n2. You can delete notes by pressing Alt + Delete\n3. You can create a new note and change its color by pressing the note icon at the top left');
+    }
+
+    if (!localStorage.getItem('guideNoteShown')) {
+        createGuideNote();
+        localStorage.setItem('guideNoteShown', 'true');
     }
 
     loadNotes();
